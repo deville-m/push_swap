@@ -5,8 +5,8 @@ CFLAGS=-Wall -Wextra -Werror
 INCLUDES=includes/
 SRCDIR=srcs/
 COMMONDIR=commons/
-CHECKERDIR=checker/
-PUSHSWAPDIR=push_swap/
+CHECKERDIR=checker_src/
+PUSHSWAPDIR=push_swap_src/
 
 COMMONSRC =	add_back.c \
 			add_elem.c \
