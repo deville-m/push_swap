@@ -56,20 +56,23 @@ CHECKEROBJ:= $(CHECKERSRC:.c=.o)
 #PUSHSWAPOBJ= $(PUSHSWAPSRC:.c=.o)
 
 all: $(CHECKER) #$(NAME2)
+	@echo "DONE !!"
 
 %.o: %.c
+	@echo "Compiling $<"
 	@$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
 
-$(CHECKER): $(CHECKERSRC)
-	$(CC) $(CFLAGS) -I$(INCLUDES) -o $@ $^
+$(CHECKER): $(CHECKEROBJ)
+	@echo "Linking $@"
+	@$(CC) $(CFLAGS) -I$(INCLUDES) -o $@ $^
 
 clean:
-	rm -f $(CHECKEROBJ) $(PUSHSWAPOBJ)
+	@rm -f $(CHECKEROBJ) $(PUSHSWAPOBJ) && echo "Removed object files."
 
 fclean: clean
-	rm -f $(CHECKER) $(PUSHSWAP)
+	@rm -f $(CHECKER) $(PUSHSWAP) && echo "Removed target(s)."
 
 re: fclean
-	$(MAKE)
+	@$(MAKE)
 
 .PHONY: all clean fclean re
