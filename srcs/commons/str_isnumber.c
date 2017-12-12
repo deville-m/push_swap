@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 14:17:31 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 14:51:14 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/12/12 21:14:04 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ int		str_isnumber(const char *str)
 {
 	int i;
 
-	if (!str
-		|| ft_strcmp(str, "2147483647") > 0
-		|| (*str == '-' && ft_strcmp(str + 1, "2147483648") > 0))
+	if (!str)
 		return (0);
 	i = 0;
 	i = (str[i] == '-') ? i + 1 : i;

@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 11:24:28 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 18:46:54 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/12/12 22:00:29 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void				add_elem(t_dlist **head, t_dlist *elem);
 void				add_back(t_dlist **head, t_dlist *elem);
 void				del_list(t_dlist **head);
 void				del_stack(t_stack stack);
+void				print_list(t_dlist **head);
+void				print_stack(t_stack stack);
 
 /*
 ** Instruction set
@@ -65,12 +67,14 @@ void				push(t_dlist **src, t_dlist **dest);
 ** Basic functions from libft
 */
 
-int		ft_atoi(const char *str);
-int		str_isnumber(const char *str);
-int		ft_strcmp(const char *s1, const char *s2);
-void	ft_putstr_fd(const int fd, const char *str);
-size_t	ft_strlen(const char *str);
-char	*ft_strcpy(char *dest, const char *src);
-char	*ft_strnew(size_t size);
+long int			ft_atoi(const char *str);
+int					str_isnumber(const char *str);
+int					ft_strcmp(const char *s1, const char *s2);
+void				ft_putstr_fd(const int fd, const char *str);
+void				ft_putnbr_fd(const int fd, int n);
+size_t				ft_strlen(const char *str);
+char				*ft_strcpy(char *dest, const char *src);
+char				*ft_strnew(size_t size);
+void				*ft_memalloc(size_t size);
 
 #endif

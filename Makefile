@@ -1,7 +1,7 @@
 CHECKER=checker
 PUSHSWAP=push_swap
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -fsanitize=address
 INCLUDES=includes/
 SRCDIR=srcs/
 COMMONDIR=commons/
@@ -15,10 +15,18 @@ COMMONSRC =	add_back.c \
 			find_elem.c \
 			ft_atoi.c \
 			ft_putstr_fd.c \
+			ft_putnbr_fd.c \
 			ft_strcmp.c \
+			ft_strcpy.c \
+			ft_strlen.c \
+			ft_strnew.c \
+			ft_memalloc.c \
 			get_next_line.c \
+			init_list.c \
 			new_elem.c \
 			pop_elem.c \
+			print_list.c \
+			print_stack.c \
 			push.c \
 			r_rotate.c \
 			r_rotate_stack.c \

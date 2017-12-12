@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 19:45:55 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 19:57:43 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/12/12 23:06:45 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int			apply_instructions(t_stack stack)
 
 	while ((ret = get_next_line(0, &instruction)))
 	{
-		if (apply_instruction(stack, instruction))
+		if (!apply_instruction(stack, instruction))
 			return (0);
 		free(instruction);
 	}

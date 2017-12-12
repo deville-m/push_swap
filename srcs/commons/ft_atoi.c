@@ -6,14 +6,14 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/20 20:48:46 by mdeville          #+#    #+#             */
-/*   Updated: 2017/11/13 15:30:22 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/12/12 21:14:37 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int	res;
-	int	neg;
+	long int	res;
+	long int	neg;
 
 	res = 0;
 	neg = 1;

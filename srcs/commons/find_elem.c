@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 14:53:45 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 19:21:29 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/12/12 22:08:51 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@ t_dlist		*find_elem(t_dlist **head, int data)
 
 	if (!head || !*head)
 		return (NULL);
-	curr = (*head)->next;
-	while (curr != *head)
+	curr = *head;
+	while (curr->next != *head)
 	{
 		if (curr->data == data)
 			return (curr);
 		curr = curr->next;
 	}
-	if (curr->data == (*head)->data)
-		return (curr);
 	return (NULL);
 }

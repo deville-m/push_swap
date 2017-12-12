@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 13:43:55 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 19:25:10 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/12/12 23:02:21 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 t_dlist		*init_list(int ac, char **av)
 {
-	t_dlist *head;
-	t_dlist *elem;
+	t_dlist		*head;
+	t_dlist		*elem;
+	long int	tmp;
 
 	head = NULL;
 	ac -= 1;
 	while (ac > 0)
 	{
 		if (!str_isnumber(av[ac])
-			|| !(elem = new_elem(ft_atoi(av[ac])))
-			|| find_elem(head, elem->data))
+			|| (tmp = ft_atoi(av[ac])) > 2147483647l
+			|| tmp < -2147483648l
+			|| !(elem = new_elem(tmp))
+			|| (head && find_elem(&head, elem->data)))
 		{
-			del_list(head);
+			del_list(&head);
 			return (NULL);
 		}
-		add_back(&head, elem);
+		add_elem(&head, elem);
 		ac -= 1;
 	}
 	return (head);

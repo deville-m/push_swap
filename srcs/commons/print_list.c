@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_elem.c                                         :+:      :+:    :+:   */
+/*   print_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 12:49:28 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 22:41:37 by mdeville         ###   ########.fr       */
+/*   Created: 2017/12/12 21:27:31 by mdeville          #+#    #+#             */
+/*   Updated: 2017/12/12 23:00:45 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
 
-void	add_elem(t_dlist **head, t_dlist *elem)
+void	print_list(t_dlist **head)
 {
-	if (!head || !elem)
+	t_dlist *curr;
+
+	if (!head)
 		return ;
 	if (!*head)
+		return (ft_putstr_fd(1, "(null)\n"));
+	curr = *head;
+	ft_putnbr_fd(1, (*head)->data);
+	while (curr->next != *head)
 	{
-		elem->next = elem;
-		elem->prev = elem;
-		*head = elem;
+		curr = curr->next;
+		write(1, " ", 1);
+		ft_putnbr_fd(1, curr->data);
 	}
-	else
-	{
-		elem->next = *head;
-		elem->prev = (*head)->prev;
-		(*head)->prev->next = elem;
-		(*head)->prev = elem;
-		*head = elem;
-	}
+	write(1, "\n", 1);
 }

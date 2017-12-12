@@ -6,3 +6,4 @@ main.c
 tests.c
 push_swap
 checker
+test*

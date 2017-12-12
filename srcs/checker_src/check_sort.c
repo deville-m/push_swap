@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 19:41:28 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 19:45:35 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/12/12 23:09:44 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		check_sort(t_dlist **head)
 	{
 		if (last >= curr->data)
 			return (0);
+		last = curr->data;
 		curr = curr->next;
 	}
 	return (1);
