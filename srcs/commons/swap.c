@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_elem.c                                         :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 11:52:07 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 19:22:11 by mdeville         ###   ########.fr       */
+/*   Created: 2017/12/12 19:31:35 by mdeville          #+#    #+#             */
+/*   Updated: 2017/12/12 19:33:57 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
 
-t_dlist			*new_elem(int data)
+void	swap(t_dlist **head)
 {
-	t_dlist *res;
+	t_dlist *tmp;
 
-	if (!(res = (t_dlist *)malloc(sizeof(t_dlist))))
-		return (NULL);
-	res->data = data;
-	return (res);
+	if (!head || !*head)
+		return ;
+	tmp = pop_elem(head);
+	rotate(head);
+	add_elem(head, tmp);
+	r_rotate(head);
 }

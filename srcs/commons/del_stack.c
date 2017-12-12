@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_elem.c                                         :+:      :+:    :+:   */
+/*   del_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 11:52:07 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 19:22:11 by mdeville         ###   ########.fr       */
+/*   Created: 2017/12/12 19:20:08 by mdeville          #+#    #+#             */
+/*   Updated: 2017/12/12 19:20:51 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
 
-t_dlist			*new_elem(int data)
+void	del_stack(t_stack stack)
 {
-	t_dlist *res;
-
-	if (!(res = (t_dlist *)malloc(sizeof(t_dlist))))
-		return (NULL);
-	res->data = data;
-	return (res);
+	del_list(stack.a);
+	del_list(stack.b);
 }

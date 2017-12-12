@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_elem.c                                         :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 11:52:07 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 19:22:11 by mdeville         ###   ########.fr       */
+/*   Created: 2017/12/12 19:36:06 by mdeville          #+#    #+#             */
+/*   Updated: 2017/12/12 19:39:17 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
 
-t_dlist			*new_elem(int data)
+void	push(t_dlist **src, t_dlist **dest)
 {
-	t_dlist *res;
-
-	if (!(res = (t_dlist *)malloc(sizeof(t_dlist))))
-		return (NULL);
-	res->data = data;
-	return (res);
+	if (!src || !dest)
+		return ;
+	add_elem(dest, pop_elem(src));
 }

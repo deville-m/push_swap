@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 13:22:55 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 13:25:13 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/12/12 19:30:57 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	r_rotate(t_dlist **head)
 {
 	if (!head || !*head)
 		return ;
-	*head = *head->prev;
+	*head = (*head)->prev;
 }
