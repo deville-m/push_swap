@@ -1,0 +1,8 @@
+a.out
+main.c
+*.o
+.DS_Store
+*~
+tests.c
+push_swap
+checker
