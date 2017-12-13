@@ -14,6 +14,7 @@ COMMONSRC =	add_back.c \
 			del_stack.c \
 			find_elem.c \
 			ft_atoi.c \
+			ft_isdigit.c \
 			ft_putstr_fd.c \
 			ft_putnbr_fd.c \
 			ft_strcmp.c \
@@ -55,15 +56,16 @@ CHECKEROBJ:= $(CHECKERSRC:.c=.o)
 #PUSHSWAPSRC= $(CHECKERSRC) $(COMMONSRC)
 #PUSHSWAPOBJ= $(PUSHSWAPSRC:.c=.o)
 
-all: $(CHECKER) #$(NAME2)
-	@echo "DONE !!"
+all: pretty $(CHECKER) #$(NAME2)
+	@echo "\tDONE !!"
 
 %.o: %.c
-	@echo "Compiling $<"
+	@zsh -c "echo -n '\tCompiling $<'"
 	@$(CC) $(CFLAGS) -I$(INCLUDES) -c $< -o $@
+	@zsh -c 'echo -e "\r\t\033[32mCompiled $@\033[0m "'
 
 $(CHECKER): $(CHECKEROBJ)
-	@echo "Linking $@"
+	@echo "\tLinking $@"
 	@$(CC) $(CFLAGS) -I$(INCLUDES) -o $@ $^
 
 clean:
@@ -75,4 +77,7 @@ fclean: clean
 re: fclean
 	@$(MAKE)
 
-.PHONY: all clean fclean re
+pretty:
+	@figlet -W -f alligator PUSH SWAP | lolcat
+
+.PHONY: all clean fclean re pretty

@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 11:24:28 by mdeville          #+#    #+#             */
-/*   Updated: 2017/12/12 22:00:29 by mdeville         ###   ########.fr       */
+/*   Updated: 2017/12/13 19:01:40 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void				push(t_dlist **src, t_dlist **dest);
 
 long int			ft_atoi(const char *str);
 int					str_isnumber(const char *str);
+int					ft_isdigit(int c);
 int					ft_strcmp(const char *s1, const char *s2);
 void				ft_putstr_fd(const int fd, const char *str);
 void				ft_putnbr_fd(const int fd, int n);
