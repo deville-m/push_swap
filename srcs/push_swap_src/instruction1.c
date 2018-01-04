@@ -1,21 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   instruction1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 15:04:09 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/04 21:19:58 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/04 20:00:30 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/04 20:57:04 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "commons.h"
 
-# include "commons.h"
-# include "get_next_line.h"
+void	sa(t_stack stack)
+{
+	write(1, "sa\n", 3);
+	swap(stack.a);
+}
 
-int		apply_instructions(t_stack stack);
+void	sb(t_stack stack)
+{
+	write(1, "sb\n", 3);
+	swap(stack.b);
+}
 
-#endif
+void	ss(t_stack stack)
+{
+	write(1, "ss\n", 3);
+	swap_stack(stack);
+}
+
+void	pa(t_stack stack)
+{
+	write(1, "pa\n", 3);
+	push(stack.b, stack.a);
+}
+
+void	pb(t_stack stack)
+{
+	write(1, "pb\n", 3);
+	push(stack.a, stack.b);
+}

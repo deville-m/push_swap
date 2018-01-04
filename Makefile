@@ -10,6 +10,7 @@ PUSHSWAPDIR=push_swap_src/
 
 COMMONSRC=		add_back.c \
 				add_elem.c \
+				check_sort.c \
 				del_list.c \
 				del_stack.c \
 				find_elem.c \
@@ -38,14 +39,17 @@ COMMONSRC=		add_back.c \
 				swap_stack.c
 
 CHECKERSRC=		apply_instructions.c \
-				check_sort.c \
 				main.c
 
 PUSHSWAPSRC=	main.c \
 				lstlen.c \
 				lstcpy.c \
 				lstsort.c \
-				set_pos.c
+				set_pos.c \
+				insertion_sort.c \
+				instruction1.c \
+				instruction2.c \
+				instruction3.c
 
 COMMONDIR:= $(addprefix $(SRCDIR), $(COMMONDIR))
 CHECKERDIR:= $(addprefix $(SRCDIR), $(CHECKERDIR))

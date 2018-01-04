@@ -1,21 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   instruction2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 15:04:09 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/04 21:19:58 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/04 20:00:30 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/04 20:08:43 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "commons.h"
 
-# include "commons.h"
-# include "get_next_line.h"
+void	ra(t_stack stack)
+{
+	write(1, "ra\n", 3);
+	rotate(stack.a);
+}
 
-int		apply_instructions(t_stack stack);
+void	rb(t_stack stack)
+{
+	write(1, "rb\n", 3);
+	rotate(stack.b);
+}
 
-#endif
+void	rr(t_stack stack)
+{
+	write(1, "rr\n", 3);
+	rotate_stack(stack);
+}
+
+void	rra(t_stack stack)
+{
+	write(1, "rra\n", 4);
+	r_rotate(stack.a);
+}
+
+void	rrb(t_stack stack)
+{
+	write(1, "rrb\n", 4);
+	r_rotate(stack.b);
+}

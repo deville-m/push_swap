@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 11:24:28 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/04 17:51:30 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/04 21:20:00 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void				del_list(t_dlist **head);
 void				del_stack(t_stack stack);
 void				print_list(t_dlist **head);
 void				print_stack(t_stack stack);
+int					check_sort(t_dlist **head);
 
 /*
 ** Instruction set
