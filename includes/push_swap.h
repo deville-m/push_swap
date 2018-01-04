@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_elem.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 14:53:45 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/04 19:11:27 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/03 16:59:42 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/04 18:42:58 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
 #include "commons.h"
 
-t_dlist		*find_elem(t_dlist **head, int data)
-{
-	t_dlist *curr;
+/*
+** Utility functions
+*/
 
-	if (!head || !*head)
-		return (NULL);
-	curr = *head;
-	while (1)
-	{
-		if (curr->data == data)
-			return (curr);
-		curr = curr->next;
-		if (curr == *head)
-			break ;
-	}
-	return (NULL);
-}
+int		lstlen(t_dlist *list);
+t_dlist	*lstcpy(t_dlist **head);
+void	lstsort(t_dlist **head);
+void	set_pos(t_dlist **head);
+
+#endif

@@ -8,38 +8,44 @@ COMMONDIR=commons/
 CHECKERDIR=checker_src/
 PUSHSWAPDIR=push_swap_src/
 
-COMMONSRC =	add_back.c \
-			add_elem.c \
-			del_list.c \
-			del_stack.c \
-			find_elem.c \
-			ft_atoi.c \
-			ft_isdigit.c \
-			ft_putstr_fd.c \
-			ft_putnbr_fd.c \
-			ft_strcmp.c \
-			ft_strcpy.c \
-			ft_strlen.c \
-			ft_strnew.c \
-			ft_memalloc.c \
-			get_next_line.c \
-			init_list.c \
-			new_elem.c \
-			pop_elem.c \
-			print_list.c \
-			print_stack.c \
-			push.c \
-			r_rotate.c \
-			r_rotate_stack.c \
-			rotate.c \
-			rotate_stack.c \
-			str_isnumber.c \
-			swap.c \
-			swap_stack.c
+COMMONSRC=		add_back.c \
+				add_elem.c \
+				del_list.c \
+				del_stack.c \
+				find_elem.c \
+				ft_atoi.c \
+				ft_isdigit.c \
+				ft_putstr_fd.c \
+				ft_putnbr_fd.c \
+				ft_strcmp.c \
+				ft_strcpy.c \
+				ft_strlen.c \
+				ft_strnew.c \
+				ft_memalloc.c \
+				get_next_line.c \
+				init_list.c \
+				new_elem.c \
+				pop_elem.c \
+				print_list.c \
+				print_stack.c \
+				push.c \
+				r_rotate.c \
+				r_rotate_stack.c \
+				rotate.c \
+				rotate_stack.c \
+				str_isnumber.c \
+				swap.c \
+				swap_stack.c
 
-CHECKERSRC=	apply_instructions.c \
-			check_sort.c \
-			main.c
+CHECKERSRC=		apply_instructions.c \
+				check_sort.c \
+				main.c
+
+PUSHSWAPSRC=	main.c \
+				lstlen.c \
+				lstcpy.c \
+				lstsort.c \
+				set_pos.c
 
 COMMONDIR:= $(addprefix $(SRCDIR), $(COMMONDIR))
 CHECKERDIR:= $(addprefix $(SRCDIR), $(CHECKERDIR))
@@ -52,11 +58,11 @@ CHECKERSRC:= $(addprefix $(CHECKERDIR), $(CHECKERSRC))
 CHECKERSRC:= $(CHECKERSRC) $(COMMONSRC)
 CHECKEROBJ:= $(CHECKERSRC:.c=.o)
 
-#PUSHSWAPSRC= $(addprefix $(CHECKERDIR), $(CHECKERSRC))
-#PUSHSWAPSRC= $(CHECKERSRC) $(COMMONSRC)
-#PUSHSWAPOBJ= $(PUSHSWAPSRC:.c=.o)
+PUSHSWAPSRC:= $(addprefix $(PUSHSWAPDIR), $(PUSHSWAPSRC))
+PUSHSWAPSRC:= $(PUSHSWAPSRC) $(COMMONSRC)
+PUSHSWAPOBJ:= $(PUSHSWAPSRC:.c=.o)
 
-all: pretty $(CHECKER) #$(NAME2)
+all: pretty $(CHECKER) $(PUSHSWAP)
 	@echo "\tDONE !!"
 
 %.o: %.c
@@ -65,6 +71,10 @@ all: pretty $(CHECKER) #$(NAME2)
 	@zsh -c 'echo -e "\r\t\033[32mCompiled $@\033[0m "'
 
 $(CHECKER): $(CHECKEROBJ)
+	@echo "\tLinking $@"
+	@$(CC) $(CFLAGS) -I$(INCLUDES) -o $@ $^
+
+$(PUSHSWAP): $(PUSHSWAPOBJ)
 	@echo "\tLinking $@"
 	@$(CC) $(CFLAGS) -I$(INCLUDES) -o $@ $^
 
@@ -81,3 +91,5 @@ pretty:
 	@figlet -W -f alligator PUSH SWAP | lolcat
 
 .PHONY: all clean fclean re pretty
+
+.IGNORE: pretty

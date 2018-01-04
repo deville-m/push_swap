@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_elem.c                                        :+:      :+:    :+:   */
+/*   lstlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 14:53:45 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/04 19:11:27 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/03 16:50:28 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/03 16:59:22 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
 
-t_dlist		*find_elem(t_dlist **head, int data)
+int		lstlen(t_dlist *list)
 {
-	t_dlist *curr;
+	t_dlist	*curr;
+	int		len;
 
-	if (!head || !*head)
-		return (NULL);
-	curr = *head;
-	while (1)
+	if (!list)
+		return (0);
+	len = 1;
+	curr = list;
+	while (curr->next != list)
 	{
-		if (curr->data == data)
-			return (curr);
 		curr = curr->next;
-		if (curr == *head)
-			break ;
+		++len;
 	}
-	return (NULL);
+	return (len);
 }

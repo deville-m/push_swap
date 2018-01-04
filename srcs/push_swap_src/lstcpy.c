@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_elem.c                                        :+:      :+:    :+:   */
+/*   lstcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/12 14:53:45 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/04 19:11:27 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/04 18:00:36 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/04 19:03:31 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
 
-t_dlist		*find_elem(t_dlist **head, int data)
+t_dlist		*lstcpy(t_dlist **list)
 {
+	t_dlist *res;
 	t_dlist *curr;
 
-	if (!head || !*head)
+	if (!list || !*list)
 		return (NULL);
-	curr = *head;
+	res = NULL;
+	curr = *list;
 	while (1)
 	{
-		if (curr->data == data)
-			return (curr);
+		add_elem(&res, new_elem(curr->data));
 		curr = curr->next;
-		if (curr == *head)
+		if (curr == *list)
 			break ;
 	}
-	return (NULL);
+	return (res);
 }
