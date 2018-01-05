@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstlen.c                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/03 16:50:28 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/05 12:11:54 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/03 14:17:00 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/05 11:56:38 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
+#include "push_swap.h"
 
-int		lstlen(t_dlist **list)
+int	main(int ac, char **av)
 {
-	t_dlist	*curr;
-	int		len;
+	t_stack stack;
+	t_dlist *a;
+	t_dlist *b;
 
-	if (!list || !*list)
-		return (0);
-	len = 1;
-	curr = *list;
-	while (curr->next != *list)
+	if (!(a = init_list(ac, av)))
 	{
-		curr = curr->next;
-		++len;
+		if (ac > 1)
+			ft_putstr_fd(2, "Error\n");
+		return (0);
 	}
-	return (len);
+	b = NULL;
+	stack.a = &a;
+	stack.b = &b;
+	set_pos(stack.a);
+	insertion_sort(stack);
+	return (0);
 }

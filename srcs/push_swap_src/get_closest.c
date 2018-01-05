@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstlen.c                                           :+:      :+:    :+:   */
+/*   get_closest.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/03 16:50:28 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/05 12:11:54 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/05 11:26:27 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/05 11:27:59 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
+#include "push_swap.h"
 
-int		lstlen(t_dlist **list)
+void	get_closest(t_stack stack, int i)
 {
-	t_dlist	*curr;
-	int		len;
+	t_dlist *next;
+	t_dlist *prev;
 
-	if (!list || !*list)
-		return (0);
-	len = 1;
-	curr = *list;
-	while (curr->next != *list)
+	next = *stack.a;
+	prev = *stack.a;
+	while (next->pos != i && prev->pos != i)
 	{
-		curr = curr->next;
-		++len;
+		next = next->next;
+		prev = prev->prev;
 	}
-	return (len);
+	if (!next->pos)
+		ra(stack);
+	else
+		rra(stack);
 }

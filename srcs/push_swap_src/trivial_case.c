@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstlen.c                                           :+:      :+:    :+:   */
+/*   trivial_case.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/03 16:50:28 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/05 12:11:54 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/05 09:58:27 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/05 12:19:19 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
+#include "push_swap.h"
 
-int		lstlen(t_dlist **list)
+int		trivial_case(t_stack stack)
 {
-	t_dlist	*curr;
-	int		len;
+	t_dlist *curr;
+	t_dlist *start;
 
-	if (!list || !*list)
-		return (0);
-	len = 1;
-	curr = *list;
-	while (curr->next != *list)
-	{
+	if (!stack.a || !*stack.a)
+		return ((stack.b && *stack.b) ? 0 : 1);
+	curr = *stack.a;
+	while (curr->pos)
 		curr = curr->next;
-		++len;
+	start = curr;
+	while (curr->pos + 1 == curr->next->pos)
+		curr = curr->next;
+	if (curr->next == start)
+	{
+		while ((*stack.a)->pos)
+			get_closest(stack, 0);
+		return (1);
 	}
-	return (len);
+	return (0);
 }

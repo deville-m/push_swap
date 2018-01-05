@@ -42,6 +42,7 @@ CHECKERSRC=		apply_instructions.c \
 				main.c
 
 PUSHSWAPSRC=	main.c \
+				get_closest.c \
 				lstlen.c \
 				lstcpy.c \
 				lstsort.c \
@@ -49,7 +50,8 @@ PUSHSWAPSRC=	main.c \
 				insertion_sort.c \
 				instruction1.c \
 				instruction2.c \
-				instruction3.c
+				instruction3.c \
+				trivial_case.c
 
 COMMONDIR:= $(addprefix $(SRCDIR), $(COMMONDIR))
 CHECKERDIR:= $(addprefix $(SRCDIR), $(CHECKERDIR))

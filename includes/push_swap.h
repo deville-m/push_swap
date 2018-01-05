@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 16:59:42 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/04 20:13:33 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/05 12:12:23 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ** Utility functions
 */
 
-int		lstlen(t_dlist *list);
+int		lstlen(t_dlist **list);
 t_dlist	*lstcpy(t_dlist **head);
 void	lstsort(t_dlist **head);
 void	set_pos(t_dlist **head);
@@ -44,6 +44,8 @@ void	rrr(t_stack stack);
 ** Sorting algorithms
 */
 
+void	get_closest(t_stack stack, int i);
+int		trivial_case(t_stack stack);
 void	insertion_sort(t_stack stack);
 
 #endif

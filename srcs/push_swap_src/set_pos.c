@@ -6,13 +6,12 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 18:21:57 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/04 19:19:49 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/05 12:18:47 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "commons.h"
-#include <stdio.h>
 
 void	set_pos(t_dlist **head)
 {
@@ -26,7 +25,7 @@ void	set_pos(t_dlist **head)
 	cpy = lstcpy(head);
 	lstsort(&cpy);
 	curr = cpy;
-	i = 0;
+	i = 1;
 	while (1)
 	{
 		tmp = find_elem(head, curr->data);
