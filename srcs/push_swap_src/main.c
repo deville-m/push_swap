@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 14:17:00 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/05 11:56:38 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/05 18:11:24 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 int	main(int ac, char **av)
 {
-	t_stack stack;
-	t_dlist *a;
-	t_dlist *b;
+	int		len;
+	t_stack	stack;
+	t_dlist	*a;
+	t_dlist	*b;
 
 	if (!(a = init_list(ac, av)))
 	{
@@ -28,7 +29,9 @@ int	main(int ac, char **av)
 	b = NULL;
 	stack.a = &a;
 	stack.b = &b;
+	len = lstlen(stack.a);
 	set_pos(stack.a);
-	insertion_sort(stack);
+	if (len <= 15)
+		insertion_sort(stack, len);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/05 11:26:27 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/05 11:27:59 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/05 16:09:01 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	get_closest(t_stack stack, int i)
 		next = next->next;
 		prev = prev->prev;
 	}
-	if (!next->pos)
+	if (next->pos == i)
 		ra(stack);
 	else
 		rra(stack);

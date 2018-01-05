@@ -6,3 +6,4 @@ tests.c
 push_swap
 checker
 test*
+analyser.sh
