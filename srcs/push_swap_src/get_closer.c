@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   trivial_case.c                                     :+:      :+:    :+:   */
+/*   get_closer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/05 09:58:27 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/08 14:46:18 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/08 14:46:35 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/08 14:47:10 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
 #include "push_swap.h"
 
-int		trivial_case(t_stack stack, int i)
+void	get_closer(t_stack stack, int i)
 {
-	t_dlist *curr;
-	t_dlist *start;
+	t_dlist *next;
+	t_dlist *prev;
 
-	if (!stack.a || !*stack.a)
-		return ((stack.b && *stack.b) ? 0 : 1);
-	curr = *stack.a;
-	while (curr->pos != i)
-		curr = curr->next;
-	start = curr;
-	while (curr->pos + 1 == curr->next->pos)
-		curr = curr->next;
-	if (curr->next == start)
+	next = *stack.a;
+	prev = *stack.a;
+	while (next->pos != i && prev->pos != i)
 	{
-		while ((*stack.a)->pos != i)
-			get_closer(stack, i);
-		return (1);
+		next = next->next;
+		prev = prev->prev;
 	}
-	return (0);
+	if (next->pos == i)
+		ra(stack);
+	else
+		rra(stack);
 }

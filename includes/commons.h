@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 11:24:28 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/04 21:20:00 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/08 12:04:24 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct		s_dlist
 {
 	int				data;
 	int				pos;
+	int				placed;
 	struct s_dlist	*next;
 	struct s_dlist	*prev;
 }					t_dlist;

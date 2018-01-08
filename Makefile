@@ -42,10 +42,12 @@ CHECKERSRC=		apply_instructions.c \
 				main.c
 
 PUSHSWAPSRC=	main.c \
-				get_closest.c \
 				lstlen.c \
 				lstcpy.c \
 				lstsort.c \
+				quick_sort.c \
+				get_min.c \
+				get_closer.c \
 				set_pos.c \
 				insertion_sort.c \
 				instruction1.c \

@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 19:32:02 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/05 18:06:54 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/08 14:47:18 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		insertion_sort(t_stack stack, int len)
 			i++;
 		}
 		else
-			get_closest(stack, i);
+			get_closer(stack, i);
 	}
 	while (*stack.b)
 		pa(stack);

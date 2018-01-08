@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_closest.c                                      :+:      :+:    :+:   */
+/*   get_min.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/05 11:26:27 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/05 16:09:01 by mdeville         ###   ########.fr       */
+/*   Created: 2018/01/08 13:40:58 by mdeville          #+#    #+#             */
+/*   Updated: 2018/01/08 13:43:54 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "commons.h"
-#include "push_swap.h"
 
-void	get_closest(t_stack stack, int i)
+t_dlist	*get_min(t_dlist **head)
 {
-	t_dlist *next;
-	t_dlist *prev;
+	t_dlist	*min;
+	t_dlist	*curr;
 
-	next = *stack.a;
-	prev = *stack.a;
-	while (next->pos != i && prev->pos != i)
+	if (!head || !*head)
+		return (NULL);
+	curr = *head;
+	min = curr;
+	while (curr->next != *head)
 	{
-		next = next->next;
-		prev = prev->prev;
+		if (curr->pos < min->pos)
+			min = curr;
+		curr = curr->next;
 	}
-	if (next->pos == i)
-		ra(stack);
-	else
-		rra(stack);
+	return (min);
 }
