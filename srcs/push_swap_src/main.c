@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 14:17:00 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/08 14:48:48 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/08 20:24:25 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,5 @@ int	main(int ac, char **av)
 		insertion_sort(stack, len);
 	else
 		quick_sort(stack);
-	print_stack(stack);
-	/*else
-		OMG_sort(stack, len);*/
 	return (0);
 }

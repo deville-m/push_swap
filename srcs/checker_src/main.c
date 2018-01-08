@@ -6,13 +6,13 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 18:56:51 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/03 17:27:39 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/08 18:48:47 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stack stack;
 	t_dlist *a;

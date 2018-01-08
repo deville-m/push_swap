@@ -6,58 +6,62 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:26:47 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/08 15:00:57 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/08 22:51:57 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <unistd.h>
 #include "commons.h"
 #include "push_swap.h"
 
-static void	get_at_end_a(t_stack stack, int i)
+static void	check(t_stack stack)
 {
-	t_dlist *next;
-	t_dlist *prev;
-
-	next = (*stack.a)->prev;
-	prev = (*stack.a)->prev;
-	while (next->pos != i && prev->pos != i)
-	{
-		next = next->next;
-		prev = prev->prev;
-	}
-	while ((*stack.a)->prev->pos != i)
-	{
-		if (next->pos == i)
-			ra(stack);
-		else
-			rra(stack);
-	}
-}
-
-static void	partition_a(t_stack stack)
-{
+	int		i;
 	t_dlist	*curr;
-	t_dlist	*min;
-	int		len;
-	int		tmp;
 
-	if (!stack.a || !*stack.a)
-		return ;
-	len = lstlen(stack.a);
-	min = get_min(stack.a);
-	tmp = min->pos + len / 2;
-	get_at_end_a(stack, tmp);
-	curr = (*stack.a)->prev;
-	while(*stack.a != curr)
+	curr = *stack.a;
+	while (curr->pos != 1)
+		curr = curr->next;
+	i = 1;
+	while (1)
 	{
-		if ((*stack.a)->pos > curr->pos)
-			ra(stack);
-		else
-			pb(stack);
+		if (curr->prev->placed && curr->pos - 1 == curr->prev->pos)
+			curr->placed = 1;
+		curr = curr->next;
+		if (curr->pos == 1)
+			break ;
+	}
+	while (1)
+	{
+		if (curr->next->placed && curr->pos + 1 == curr->next->pos)
+			curr->placed = 1;
+		curr = curr->prev;
+		if (curr->pos == 1)
+			break ;
 	}
 }
 
-void	quick_sort(t_stack stack)
+void		quick_sort(t_stack stack)
 {
+	if (trivial_case(stack, 1))
+		return ;
 	partition_a(stack);
+	while (*stack.b)
+		partition_b(stack);
+	while (!trivial_case(stack, 1))
+	{
+		if (!(*stack.a)->placed && (*stack.a)->pos - 1 == (*stack.a)->next->pos)
+			sa(stack);
+		else if (!(*stack.a)->placed)
+		{
+			while (*stack.a && !(*stack.a)->placed)
+				pb(stack);
+			while (*stack.b)
+				partition_b(stack);
+		}
+		else
+			ra(stack);
+		check(stack);
+	}
 }

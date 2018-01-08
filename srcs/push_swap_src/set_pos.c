@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 18:21:57 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/05 12:18:47 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/08 18:15:29 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	set_pos(t_dlist **head)
 	{
 		tmp = find_elem(head, curr->data);
 		tmp->pos = i++;
+		tmp->placed = 0;
 		curr = curr->next;
 		if (curr == cpy)
 			break ;

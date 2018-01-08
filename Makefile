@@ -45,6 +45,8 @@ PUSHSWAPSRC=	main.c \
 				lstlen.c \
 				lstcpy.c \
 				lstsort.c \
+				partition_a.c \
+				partition_b.c \
 				quick_sort.c \
 				get_min.c \
 				get_closer.c \
