@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:26:47 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/08 22:51:57 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/09 14:47:20 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void		quick_sort(t_stack stack)
 		{
 			while (*stack.a && !(*stack.a)->placed)
 				pb(stack);
-			while (*stack.b)
-				partition_b(stack);
+			sort_b(stack);
 		}
 		else
 			ra(stack);
 		check(stack);
+		print_stack(stack);
 	}
 }
