@@ -51,6 +51,7 @@ PUSHSWAPSRC=	main.c \
 				get_min.c \
 				get_closer.c \
 				set_pos.c \
+				sort_b.c \
 				insertion_sort.c \
 				instruction1.c \
 				instruction2.c \

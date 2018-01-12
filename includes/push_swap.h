@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 16:59:42 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/08 19:47:01 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/12 14:55:34 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	rrr(t_stack stack);
 */
 
 void	get_closer(t_stack stack, int i);
+void	sort_b(t_stack stack);
 int		trivial_case(t_stack stack, int i);
 void	insertion_sort(t_stack stack, int len);
 void	partition_a(t_stack stack);
