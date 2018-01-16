@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 18:56:51 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/08 18:48:47 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/16 11:55:47 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	main(int ac, char **av)
 	t_dlist *a;
 	t_dlist *b;
 
+	if (ac == 1)
+		return (0);
 	if (!(a = init_list(ac, av)) && ac > 1)
 	{
 		ft_putstr_fd(2, "Error\n");
@@ -37,5 +39,4 @@ int	main(int ac, char **av)
 	else
 		ft_putstr_fd(1, "KO\n");
 	del_stack(stack);
-	return (0);
 }
