@@ -6,7 +6,7 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 13:26:47 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/20 17:25:06 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/20 17:30:06 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void		quick_sort(t_stack stack)
 	if (trivial_case(stack, 1))
 		return ;
 	partition_a(stack);
-	while (!stack.b)
+	while (*stack.b)
 		partition_b(stack);
 	while (!trivial_case(stack, 1))
 	{
