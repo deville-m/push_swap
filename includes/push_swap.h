@@ -6,14 +6,14 @@
 /*   By: mdeville <mdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 16:59:42 by mdeville          #+#    #+#             */
-/*   Updated: 2018/01/12 14:55:34 by mdeville         ###   ########.fr       */
+/*   Updated: 2018/01/20 17:17:15 by mdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "commons.h"
+# include "commons.h"
 
 /*
 ** Utility functions
